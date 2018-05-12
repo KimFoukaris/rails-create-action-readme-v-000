@@ -186,3 +186,14 @@ ActionView::MissingTemplate (Missing template posts/create, application/create w
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (45.5ms)
   [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1[0m
+
+
+Started POST "/posts" for 46.199.241.13 at 2018-05-12 08:06:46 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EfaauQm6RUBNenLp7m3Y8Nvll1RTJZBqejQDjkDtafs6zbQCtK930SZD0VSFauPA1msvkopbTLDvdLTPslo0gw==", "title"=>"My post", "description"=>"My desc", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "My post"], ["description", "My desc"], ["created_at", "2018-05-12 08:06:46.645553"], ["updated_at", "2018-05-12 08:06:46.645553"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Redirected to http://165.227.145.70:37708/posts/4
+Completed 302 Found in 27ms (ActiveRecord: 3.0ms)
